@@ -6,6 +6,8 @@ decrypt_text = ""
 for letter in text_input:
     if letter == " ":
         cipher_text += " "
+    elif letter == ".":
+        cipher_text += "."
     elif letter.isupper():
         char_pos = ord(letter)
         new_pos = (char_pos - key_input - 65) % 26 + 65
