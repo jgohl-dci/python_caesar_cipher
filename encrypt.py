@@ -18,7 +18,17 @@ for letter in text_input:
         j = 0
         for i in german_problems:
             if letter == i:
-                cipher_text += german_problems2[j]
+                
+                # cipher_text += german_problems2[j]
+                letter = german_problems2[j]
+                char_pos = ord(letter[0])
+                new_pos = (char_pos + key_input - 97) % 26 + 97
+                char_pos2 = ord(letter[1])
+                new_pos2 = (char_pos2 + key_input - 97) % 26 + 97
+                new_letter = chr(new_pos)
+                new_letter2 = chr(new_pos2)
+                cipher_text = new_letter + new_letter2
+    
             else:
                 j += 1
                 
